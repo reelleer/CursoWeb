@@ -1,0 +1,140 @@
+/*AYUDA VISUAL*/
+/* header, .sitio-ancho, main, aside, footer {
+	outline: 1px dotted red;
+} */
+
+header {
+	height: 200px;
+	position: relative;
+}
+
+html {
+	font-size: 18px;
+	color: #333;
+	font-family: "Open Sans" sans-serif
+}
+
+h1 {
+	text-align: center;
+	color: white;
+	background-color: steelblue;
+	border: 2px solid #0E1A24;
+	border-right: 0px;
+	border-left: 0px
+}
+
+body {
+	background-image: url("../img/trama.jpg");
+	margin: 0px 0px;
+}
+
+main,
+aside {
+	box-sizing: border-box;
+	margin: 1% 1%;
+	float: left;
+}
+
+main {
+	width: 68%;
+}
+
+aside {
+	width: 28%;
+}
+
+a {
+	text-decoration: none;
+	color: orange;
+}
+
+a:hover {
+	color: red;
+	border-bottom: 0.05em dotted red; 
+}
+
+footer {
+	background-color: steelblue;
+	height: 30px
+}
+
+footer p {
+	margin: 0px 10px;
+	float: left;
+}
+
+.fondo {
+	background: linear-gradient(#0E1A24 2%,steelblue);
+}
+
+.limpiar {
+	clear: both;
+}
+
+.sitio-ancho {
+	margin: 0px auto;
+	width: 900px;
+}
+
+.sitio-encabezado {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	background-image: url("../img/banner.jpg");
+	background-size: 100%;
+	background-position: 50% 50%;
+}
+
+.sitio-encabezado p {
+	margin: 0px 0px;
+	position: relative;
+	top: 20px;
+	line-height: 2em;
+	width: 250px;
+	background-color: steelblue;
+	border-radius: 0px 5px 5px 0px;
+}
+
+.sitio-menu ul {
+	list-style: none;
+	text-align: right;
+	margin-bottom: 0px;
+}
+
+.sitio-menu li {
+	display: inline-block;
+	margin-right: 2px;
+}
+
+.sitio-menu-encabezado {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+/*0011*/
+.sitio-menu-encabezado a {
+	color: inherit;
+	background-color: steelblue;
+	display: block;
+	border-radius: 5px 5px 0px 0px;
+	line-height: 1.25em;
+	padding: 10px;
+	text-transform: capitalize;
+}
+
+.sitio-menu-encabezado a:hover {
+	background-color: orange;
+}
+
+/*0011*/
+.sitio-menu-activo,
+a.sitio-menu-activo {
+	background-color: cornsilk !important;
+}
+
+a.sitio-menu-activo {
+	color: steelblue;
+	border: 2px solid steelblue;
+	border-bottom: 0px;
+}
+

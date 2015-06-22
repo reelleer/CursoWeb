@@ -1,0 +1,33 @@
+body {
+	padding-bottom: 1000px;
+}
+
+#pf {
+	position: fixed;
+	bottom: 0px;
+	right: 20px;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	background-color: steelblue;
+	font-weight: bold;
+	text-align: center;
+}
+#pa {
+	position: absolute;
+	top: 150px;
+	font-size: 2em;
+	z-index: 5;
+	color: white;
+}
+
+span {
+	padding: 0px 10px;
+	display: inline-block;
+}
+
+#pr > img {
+	position: relative;
+	top:18px;
+	left: 0px;
+}

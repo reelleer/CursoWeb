@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript - Ejemplo</title>
+	<script type="text/javascript">
+	/*
+		Al presionar el boton se debe reemplazar el encabezado por
+		el valor de la caja de texto, utilizar el evento onClick
+		del boton.
+	*/	
+	function substitute()
+	{
+		//document es el acceso al DOM (Document Object Model)
+		var title = document.getElementById("myTextBox").value;
+		var h1 = document.getElementById("title").innerText = title;
+		//$("#title").hide();
+		//document.getElementById("title").style.display = "none";
+	}
+	</script>
+</head>
+<body>
+	<h1 id="title">JavaScript - Example</h1>
+	<input type="text" id="myTextBox">
+	<input type="submit" id="clickMe" onclick="substitute();">
+
+	<p>Para conocer ser  más de lo eventos de HTML visitar <a href="http://www.w3schools.com/tags/ref_eventattributes.asp">W3Schools HTML Events</a>
+</body>
+</html>
