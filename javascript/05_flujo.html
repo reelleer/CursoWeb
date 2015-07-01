@@ -9,8 +9,133 @@
 			2. operadores == vs ===, != vs !== 	http://www.w3schools.com/jsref/jsref_statements.asp
 			ternario ?:
 			switch 	http://www.w3schools.com/js/js_switch.asp
-			
+			&& : AND
+			|| : OR
+			!  : NEGACION
+			falsy values: http://www.w3schools.com/jsref/jsref_type_conversion.asp
 		*/
+
+		var jose = 25;
+		var jeobel = 21;
+		var joseph = 35;
+
+		if(jose > jeobel) {
+			document.write("<p>Jose es mayor que Jeobel");
+		}
+
+		if( joseph < jeobel){
+			document.write("<p>Joebel es mayor que Joseph");
+		} else {
+			document.write("<p>Joseph es mayor que Jeobel");
+		}
+
+		if( joseph == jeobel){
+			document.write("<p>Joseph y Jeobel si tienen la misma edad");
+		} else {
+			document.write("<p>Joseph y Jeobel no tienen la misma edad");
+		}
+
+		if( joseph == "35"){
+			document.write("<p>Joseph si tiene la misma edad");
+		} else {
+			document.write("<p>Joseph no tiene la misma edad");
+		}
+
+		if( joseph === "35"){
+			document.write("<p>Joseph si tiene la misma edad");
+		} else {
+			document.write("<p>Joseph no tiene la misma edad");
+		}
+
+		if( joseph != jose){
+			document.write("<p>Joseph y José no tienen la misma edad");
+		} else {
+			document.write("<p>Joseph y José tienen edades diferentes");
+		}
+
+		if( true != 1){
+			document.write('<p>Esto no se va ejecutar');
+		} else {
+			document.write('<p>true booleano es equivalente al numero <i>1</i>');
+		}
+
+		var salario = "5000";
+		if( salario == 5000){
+			var bono = salario * 0.25;
+			var total = salario + bono;
+			document.write("<p>bono: " + bono + "<br> salario: " + salario + "<br> total: " + total);
+		} else {
+			alert("No aplica");
+		}
+
+		//operador ternario
+		var estamaduro = joseph > 30 ? true : false;
+
+		document.write("<p>Esta maduro joseph: " + estamaduro);
+
+		var llueve = 0;
+		var sombrilla = 0;
+		var sol = "si esta soleado";
+
+		/*
+		if(llueve && sombrilla){ //llueve == true && sombrilla == true
+			alert("No me voy a mejor");
+		}
+
+		if(llueve && !sombrilla) {
+			alert("Me voy a mojar");
+		}
+
+		if(llueve && sol){
+			alert("Me voy a mojar poquito");
+		}
+
+		if(llueve)
+			if(sol)
+				if(sombrilla)
+					alert("No me voy mojar");
+				else
+					alert("Me voy a mjor un poquito");
+			else
+				if(!sombrilla)
+					alert("Me voy a mojar");
+				else
+					alert("No me voy mojar");
+		else
+			if(sol)
+				if(sombrilla)
+					alert("No me voy asolear");
+				else
+					alert("Deberías usar bloqueador")
+			else
+				alert("Deberías usar bloqueador");
+		*/
+
+		var valor = "abc";
+
+		valor = !!valor;
+
+		document.write(
+			'<p>Valor = ' + valor + 
+			'<br> tipo: ' + typeof valor + 
+			'<br>Lo considera: ' + (valor ? "verdadero" : "falso")
+		)
+
+		var colores = "azul";
+		var color;
+
+		switch (colores){
+			case "rojo":
+				color = "red";
+				break;
+			case "azul":
+				color = "blue";
+				break;
+			default:
+				color = "no se pudo traducir";
+		}
+
+		document.write('<p>' + colores + " en ingles es " + color);
 	</script>
 </head>
 <body>

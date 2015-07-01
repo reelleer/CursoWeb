@@ -10,19 +10,75 @@
 			2. while, do...while	http://www.w3schools.com/js/js_loop_while.asp
 	*/
 	
-	var alumnos = ["José", "Joavel", "Joseph", "Arlon", "Henry", "Hugo"];
+	var alumnos = ["José", "Jeobel", "Joseph", "Arlon", "Henry", "Hugo"];
 	
 	//con for
+	for(var i = 0; i < alumnos.length; i++)	{
+		console.log(alumnos[i]);
+	}
+
+	var l = 0;
+	var longitud = alumnos.length;
+
+	for(;l < longitud;)
+	{
+		console.log(alumnos[l])
+		l++;
+	}
 	//con for in
+	for(var x in alumnos)
+	{
+		console.log(alumnos[x]);
+	}
+
+	var persona = {
+		nombre: "Juan Perez",
+		edad: 21,
+		raza: "mestizo",
+		saltero: false,
+		hijos: false,
+	}
+
+	for(var p in persona)
+	{
+		console.log(persona[p]);
+	}
 	//con while
+	i = 0;
+	while (i < longitud){
+		console.log(alumnos[i]);
+		i++
+	}
 	//con do...while
-	
+	console.log("do..while");
+	i = 0;
+	do {
+		console.log(alumnos[i]);
+		i++
+	}while(i < longitud)
 	//loop inverso
+	console.log("loop inverso")
 	var palindromo = "reconocer";
+
+	for(i=palindromo.length - 1; i > -1; i--)	{
+		console.log(palindromo[i]);
+	}
+
+	i = longitud - 1;
+	while (i > -1){
+		console.log(alumnos[i]);
+		i--
+	}
+
+	i = longitud - 1;
+	do {
+		console.log(alumnos[i]);
+		i--
+	}while(i > -1)
 	</script>
 </head>
 <body>
-	<h1>Javascript - Loops/h1>
+	<h1>Javascript - Loops</h1>
 	
 </body>
 </html>

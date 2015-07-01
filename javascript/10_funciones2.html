@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript - Funciones</title>
+	<script type="text/javascript">
+		/*
+			Scope: http://www.w3schools.com/js/js_scope.asp
+			Funciones: http://www.w3schools.com/js/js_function_definition.asp
+		*/
+		function miFuncion(a,b)
+		{
+			var temp = "\na: " + a +
+			           "\nb: " + b +
+			           "\narguments[0]:" + arguments[0] +
+			           "\narguments[1]:" + arguments[1] +
+			           "\narguments[2]:" + arguments[2] +
+			           "\narguments[3]:" + arguments[3] +
+			           "\narguments[4]:" + arguments[4]() +
+			           "\narguments.length:" + arguments.length +
+			           "\narguments.callee.length:" + arguments.callee.length;
+
+			return temp;
+		}
+
+		var nombre = "Juan";
+
+		function addLastName(name) {
+			name += " Pérez";
+			return name;
+		}
+
+		var persona = {
+			name: "Juan",
+			apellido: "Pérez"
+		}
+
+		function changeThis(){
+			return name;
+		}
+
+		console.log(changeThis());
+		console.log(changeThis.call(addLastName));
+
+		function addAge(person){
+			person.edad = 44;
+			return person.edad;
+		}
+
+		console.log(persona);
+		console.log(addAge(persona),persona);
+
+
+		console.log(nombre, addLastName(nombre), nombre);
+
+		console.log(
+				miFuncion(1, true, "texto",{}, function () {return "hola"})
+		);
+
+		console.log(miFuncion.toString());
+
+		//javascript closure
+		function contador(){
+			var c = 0;
+
+			function add(){
+				c++;
+				return c;
+			}
+
+			return add;
+		}
+
+		var refToAdd = contador();
+
+		refToAdd();
+		refToAdd();
+		refToAdd();
+
+		console.log(refToAdd())
+	</script>
+</head>
+<body>
+	<h1>Javascript - Funciones</h1>
+	
+</body>
+</html>

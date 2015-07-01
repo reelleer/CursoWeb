@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript - Funciones (prototype)</title>
+	<script type="text/javascript">
+		//todos heredan Object.protoype
+		var miobjeto = {}; //objeto creado de forma literal
+
+		var elobjeto = new Object();
+
+		function Persona(nombre, apellido, edad){
+			//estos so properties para lo objetos intanciados por el constructor.
+			this.firstname = nombre;
+			this.lastname = apellido;
+			this.age = edad;
+			//this.seguro = 2.50;
+			this.toString = function() {
+				return this.firstname + ' ' + this.lastname + ' ' + this.age;
+			}
+		}
+
+		Persona.prototype.seguro = 1.25;
+		Persona.prototype.nombreCompleto = function () {
+			return "SN " + this.lastname; 
+		};
+
+		var miPapa = new Persona("Pedro", "Páramo", 99);
+		var miMama = new Persona("María", "De Páramo", 60);
+
+		miPapa.seguro = 5000000.00;
+		miPapa.nombreCompleto = function () {
+			return this.firstname + ' ' + this.lastname;
+		}
+
+		console.log(Persona.seguro);
+		console.log(miPapa.nombreCompleto());
+		console.log(miPapa.seguro);
+		console.log(miMama.seguro);
+		console.log(miMama.nombreCompleto());
+		console.log(miMama.toString());
+		console.log(miPapa.toString());
+		console.log(Object.prototype.toString);
+	</script>
+</head>
+<body>
+	<h1>Javascript - Funciones (prototype)</h1>
+	
+</body>
+</html>

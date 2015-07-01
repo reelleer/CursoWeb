@@ -9,7 +9,65 @@
 			2. array inicializado en la declaración
 			3. array asociativo
 			4. array .length (propiedad)
+			5. acceder variable string como array
+
+			Los array en Javascript inician siempre con un
+			subindice 0.
 		*/
+		var elarray = [];
+		elarray[0] = 1;
+		elarray[1] = 2;
+
+		var arrayiniciado = [2,3,4,5];
+
+		var arraysintipo = [1,true,"es un valor", null, undefined,{}];
+
+		document.write("<p>elarray: " + elarray);
+		document.write("<p>arrayiniciado: " + arrayiniciado);
+		document.write("<p>arraysintipo: " + arraysintipo);
+		document.write("<p>undefined como string: " + undefined);
+		document.write("<p>null como string: " + null);
+
+		var arrayasociativo = [];
+		arrayasociativo[0] = "juan";
+		arrayasociativo[1] = 25;
+		arrayasociativo[2] = "perez";
+		arrayasociativo["nombre"] = "juan";
+		arrayasociativo["edad"] = 25;
+		document.write("<p>arrayasociativo: " + arrayasociativo);
+		document.write("<p>tipo para arrayasociativo: " + typeof arrayasociativo);
+		document.write("<p>tipo para elarray: " + typeof elarray);
+		document.write("<p>nombre: " + arrayasociativo.nombre);
+		document.write("<p>edad: " + arrayasociativo.edad);
+		document.write("<p>longitud: " + arrayasociativo.length);
+
+		document.write("<p>Mi nombre: " + "Rolando Espinosa".length);
+		document.write("<p>Mi nombre[8]: " + "Rolando Espinosa"[8]);
+
+		var stringObject = new String("Rolando Espinosa");
+
+		document.write(
+			"<p>Mi nombre: " + stringObject +
+			"<br>stringObject.length" + stringObject.length +
+			"<br>stringObject.toUpper(): " + stringObject.toUpperCase() +
+			"<br>stringObject.toLower(): " + stringObject.toLowerCase() +
+			"<br>tipo de stringObject: " + typeof stringObject +
+			"<br>Mi nombre primitivo: " + stringObject.toString() +
+			"<br>typeof toString(): " + typeof stringObject.toString()
+		);
+
+		var multidimensionales = [];
+
+		multidimensionales[0,0] = "1.1";
+		multidimensionales[0,1] = "1.2";
+		console.log(multidimensionales);
+
+		//elemento de array que contien un array
+		//lo cual proporiciona una multidimensión.
+		multidimensionales[1] = ["2.1"];
+
+
+		console.log(multidimensionales[1][0]);
 
 	</script>
 </head>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript - Scope y Functions</title>
+	<script type="text/javascript">	
+		/*
+			Scope: http://www.w3schools.com/js/js_scope.asp
+			Funciones: http://www.w3schools.com/js/js_function_definition.asp
+		*/
+		nombre = "Rolando";
+		edad = 36;
+
+		function sayHi(){
+			var nombre = "Enrique";
+			var apellido = "Espinosa";
+			console.log("Hi " + nombre);
+
+			function sayHi() {
+				var apellido = "lazo";
+				console.log(apellido + edad);
+
+				function sayHi() {
+					console.log(nombre,apellido, edad);
+				}
+
+				sayHi();
+			}
+
+			sayHi();
+		}
+
+		function retorna(a,b) {
+			return a + b;
+		}
+
+		console.log(window.nombre);
+		console.log(window.sayHi());
+		console.log(window.nombre);
+		console.log(window.apellido);
+		console.log(retorna("b",90));
+
+		//funciones anónimas
+		/*
+		estos es una función anónima pero
+		no se puede usar de forma directa.
+		function(){
+			return "Funcion anónima";
+		}
+		*/
+
+		//llamando de forma inmediata una función anónima.
+		(
+			function(){
+				console.log("Soy una función anónima")
+			}
+		)();
+
+		console.log(
+			(function(){
+				return "Funcion anónima";
+			})()
+		);
+
+		//salida de una función anómica (no se manda a llamar o ejecutar)
+		console.log(
+			function(){
+				return "Funcion anónima";
+			}
+		);
+
+		var mifuncion = function() {
+			console.log("funcion casi anónima fue llamada");
+		};
+
+		console.log(mifuncion);
+
+		mifuncion();
+
+		var mifuncionAnonima = mifuncion;
+
+		console.log(mifuncionAnonima);
+
+		retorna.descripcion = "Esta funcion suma o concatena."
+		retorna.metodo = function () {
+			return this.descripcion
+		};
+
+		
+		console.log(retorna["descripcion"]);
+		console.log("Llmando al método: " + retorna.metodo());
+		console.log(retorna(3,4));
+
+		var fnoanonima = retorna;
+		console.log(fnoanonima(1,2));
+		console.log(fnoanonima);
+	</script>
+</head>
+<body>
+	<h1>Javascript - Scope y Functions</h1>
+	
+</body>
+</html>

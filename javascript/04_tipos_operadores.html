@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Javascript - Variables, tipo y Operadores</title>
+	<title>Javascript - Variables, tipos de datos y Operadores</title>
 	<script type="text/javascript">
 		/*
 			Variables
@@ -10,17 +10,80 @@
 				1. string
 				2. numbers
 				3. booleans
-				4. Undefined
+				4. undefined
 				5. null
 			operadores (+ - / * concatenar typeof) http://www.w3schools.com/jsref/jsref_operators.asp
-			
 		*/
 		
-		
+		x = "Esto es un cadena";
+		y =  'Esto es una cadena';
+		tag = '<p style="font-weight=bold">Esto es un parrafo</p>';
+		tag2 = "<p style=\"font-weight=bold\">Esto es un\n parrafo 2</p>";
+		scape = "Esto es un mensaje:\ncon dos líneas.\n\t tercer linea";
+
+		entero = 1;
+		real = 1.1;
+		negativo = -1;
+
+		var verdadero = true;
+		var falso = false;
+
+		var nodefinida = undefined;
+		var nula = null;
+		var solodeclarada;
+
+
+		document.write("<p>x: " + typeof x);
+		document.write("<p>y: " + typeof y);
+		document.write("<p>tag: " + typeof tag);
+		document.write("<p>tag2: " + typeof tag2);
+		document.write("<p>scape: " + typeof scape);
+		document.write("<p>entero: " + typeof entero);
+		document.write("<p>real: " + typeof real);
+		document.write("<p>negativo: " + typeof negativo);
+		document.write("<p>verdadero: " + typeof verdadero);
+		document.write("<p>falso: " + typeof falso);
+		document.write("<p>nodefinida: " + typeof nodefinida);
+		document.write("<p>noexiste: " + typeof noexiste);
+		document.write("<p>solodeclarada: " + typeof solodeclarada);
+		document.write("<p>nula: " + typeof nula);
+
+
+		var edad = 18;
+		var anio = 5;
+
+		var edad2 = edad + 5;
+		var edad2 = "texto" * anio;
+		document.write("<p>edad2: " + typeof edad2);
+		document.write("<p>edad2: " + (edad2 + anio));
+		document.write("<p>edad2: " + isNaN(edad2));
+		document.write("<p>concatenar null: " + null);
+		document.write("<p>concatenar undefined: " + undefined);
+
+
+		var edad3 = edad - anio;
+		document.write("<p>edad3: " + edad3);
+
+		var edad4 = edad / anio;
+		document.write("<p>edad4: " + edad4);
+
+		var edad5 = edad % 6;
+		document.write("<p>edad5: " + edad5);
+
+		edad += anio; //23
+		edad *= anio; //115
+		edad /= anio; //23
+		edad %= anio; //3
+		edad++; //4
+		edad--; //3
+
+		document.write("<p>edad: " + edad);		
+
 	</script>
 </head>
 <body>
-	<h1>Javascript - Variables, tipo y Operadores</h1>
-	
+	<h1>Javascript - Variables, tipos de datos y Operadores</h1>
+	<p style="font-weight=bold">Esto es                     un
+	 parrafo 2</p>
 </body>
 </html>

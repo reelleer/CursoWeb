@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript - Objects</title>
+	<script type="text/javascript">	
+	/*
+		difinción de objeto
+		acceder las propiedades como array
+		objetos con métodos
+		los objetos son dinámicos
+	*/
+	
+
+	var persona = {
+		nombre: "Juan Perez",
+		sayHi: function () {
+			console.log("Hi, I'm " + this.nombre);
+		}
+	};
+
+	persona.Nombre = "Juan Perez";
+	persona["nombre "] = "Juan Perez";
+
+	console.log(typeof persona);
+	console.log(persona.toString());
+
+	console.log(".nombre=" + persona.nombre);
+	console.log(".Nombre=" + persona.Nombre);
+	console.log('["nombre "]=' + persona["nombre "]);
+	persona[0] = 1;
+	console.log("persona.length=" + persona.length);
+	console.log(typeof persona);
+	console.log(persona.toString());
+	console.log("persona[0]="+ persona[0]);
+
+	for(var p in persona)
+		console.log("persona." + p + "=" + persona[p]);
+
+	persona.write = function() {
+		console.log("llamando persona.write");
+	};
+
+	persona.write();
+	persona.sayHi();
+	console.log(persona.sayHi);
+	</script>
+</head>
+<body>
+	<h1>Javascript - Objects</h1>
+
+
+	
+</body>
+</html>

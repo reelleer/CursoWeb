@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript - Manejando Eventos</title>
+	<style type="text/css">
+		#exc01 {
+			width: 100%;
+		}
+		
+		.clearfix {
+			clear: both;
+		}
+		#btn {
+			background-color: lightblue;
+			border-style: none;
+			height: 100px;
+			font-size: 3em;
+			
+		}
+		
+		button {
+			width: 100%;
+			margin: 5px 0px;
+		}
+		
+		#config > div {
+			float: left;
+			width: 31%;
+			padding: 1%;
+		}
+		#logs {
+			min-height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div id="exc01">
+		<button type="button" id="btn" >El botÃ³n</button>
+		<div id="config">
+			<div>
+				<button type="button" class="hi">+clic hi</button>
+				<button type="button" class="hello">+click hello</button>
+				<button type="button" class="hello">-click</button>
+			</div>
+			<div>
+				<button type="button" class="hi">+listener hi</button>
+				<button type="button" class="hi">-listener hi</button>
+				<button type="button" class="hello">+listener hello</button>
+				<button type="button" class="hello">-listener hello</button>
+				
+			</div>
+			<div>
+				<button type="button" class="hello">+listener anonimo</button>
+			</div>
+		</div>
+		<div id="logs" class="clearfix"></div>
+		<div>
+			<button type="button" id="clearlog">Clear Log</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		(function () {
+			var items = config.querySelectorAll("button");
+			
+			for (var i = 0; i < items.length; i++) {
+				var ele = items[i];
+				ele.onclick = buttonClic;
+			}
+			
+			clearlog.addEventListener("click", cleanLog);
+					
+			function buttonClic(e)
+			{
+				var ele = e.target;
+				
+				if(ele.innerText.indexOf("anonimo") > 0 )
+				{
+					btn.addEventListener("click", function(){
+						var ms;
+						if(ms === undefined)
+							ms = Date.now().toString();
+						log("anominmo " + ms );
+					});
+				} 
+				else if(ele.innerText[0] === "+")
+				{
+					if(ele.innerText.indexOf("clic") > 0)
+					{
+						if(ele.className === "hi")
+						{
+							btn.onclick = sayHi;
+						}
+						else
+						{
+							btn.onclick = sayHello;
+						}
+					}
+					else
+					{
+						if(ele.className === "hi")
+						{
+							btn.addEventListener("click",sayHi);
+						}
+						else
+						{
+							btn.addEventListener("click",sayHello);
+						}
+					}
+				}
+				else
+				{
+					if(ele.innerText.indexOf("clic") > 0)
+					{
+						btn.onclick = null;
+					}
+					else
+					{
+						if(ele.className === "hi")
+						{
+							btn.removeEventListener("click",sayHi);
+						}
+						else
+						{
+							btn.removeEventListener("click",sayHello);
+						}
+					}
+				}
+			}
+			
+			function cleanLog()
+			{
+				logs.innerHTML = "";
+			}
+			
+			function sayHi()
+			{
+				log("hi");
+			}
+			
+			function sayHello()
+			{
+				log("hello");
+			}
+			
+			function log(message)
+			{
+				if(logs.innerHTML)
+					logs.innerHTML += message + "<br/>";
+				else
+					logs.innerHTML = message + "<br/>";
+			}
+		})();
+		
+	</script>
+</body>
+</html>
