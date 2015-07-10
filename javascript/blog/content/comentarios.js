@@ -1,7 +1,7 @@
 (function (){
 	var contador = 0;
 	//querySelectorAll retorna un nodelist, se comporta como una arreglo
-	//pero no lo es.
+	//pero no lo es. http://www.w3schools.com/js/js_htmldom_nodelist.asp
 	var txtAreas = document.querySelectorAll('form textarea');
 
 	for(var i = 0;  i < txtAreas.length; i++){
