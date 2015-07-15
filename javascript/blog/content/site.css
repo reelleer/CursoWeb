@@ -139,3 +139,12 @@ a.sitio-menu-activo {
 	border-bottom: 0px;
 }
 
+#mostrar {
+	display: none;
+	width: 400px;
+	border: 1px solid lightgray;
+	padding: 1em;
+	background-color: #FFFF66;
+	font-style: italic;
+	z-index: 50;
+}
