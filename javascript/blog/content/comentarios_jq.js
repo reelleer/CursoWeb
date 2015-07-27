@@ -1,22 +1,18 @@
-(function (){
+(function ($){
 	var contador = 0;
-	//querySelectorAll retorna un nodelist, se comporta como una arreglo
-	//pero no lo es. http://www.w3schools.com/js/js_htmldom_nodelist.asp
-	var txtAreas = document.querySelectorAll('form textarea');
+	
+	$('form textarea').width("100%");
 
-	for(var i = 0;  i < txtAreas.length; i++){
-		txtAreas[i].style.display = "inline-block";
-		txtAreas[i].style.width = "100%";
-	}
+	var submit = $('form');
+	var commentBlock = $("#comentarios");
+	var respond = $("#respuesta");
+	var commentPopup = $("#mostrar");
 
-	var submit = document.querySelector('form');
-	var commentBlock = document.getElementById("comentarios");
-	var respond = document.getElementById("respuesta");
-	var commentPopup = document.getElementById("mostrar");
-	commentBlock.addEventListener("click",responder);
-	commentBlock.addEventListener("mouseover", showComment);
-	commentBlock.addEventListener("mouseout", showComment);
-	respond.style.display = "none";
+	commentBlock.on("click",responder);
+	commentBlock.on("mouseover", showComment);
+	commentBlock.on("mouseout", showComment);
+
+	respond.hide();
 
 	submit.onsubmit = publicar;
 
@@ -102,4 +98,4 @@
 	    }
 	    return { x: xPosition, y: yPosition };
 	}
-})();
+})(jQuery);
