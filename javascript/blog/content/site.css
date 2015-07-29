@@ -146,4 +146,5 @@ a.sitio-menu-activo {
 	padding: 1em;
 	background-color: #FFFF66;
 	font-style: italic;
+	position: absolute;
 }
