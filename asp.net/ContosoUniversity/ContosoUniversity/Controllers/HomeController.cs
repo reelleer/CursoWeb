@@ -16,6 +16,9 @@ namespace ContosoUniversity.Controllers
             return View();
         }
 
+        //Para leer más sobre caching http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
+        //Duration int, numuero de segundo para almacenar en cache.
+        [OutputCache(Duration=60)]
         public ActionResult About()
         {
             //IQueryable<EnrollmentDateGroup> data = from student in db.Students
