@@ -23,8 +23,15 @@ namespace ContosoUniversity
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/form").Include(
+                      "~/Scripts/bootstrap-datepicker.js",
+                      "~/Scripts/locales/bootstrap-datepicker.es.min.js",
+                      "~/Scripts/form_plugin.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-datepicker.css",
+                      "~/Content/bootstrap-datepicker.standalone.css",
                       "~/Content/site.css"));
         }
     }
