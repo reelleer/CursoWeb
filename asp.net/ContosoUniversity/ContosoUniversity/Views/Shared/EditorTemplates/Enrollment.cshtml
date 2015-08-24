@@ -1,0 +1,10 @@
+﻿@model ContosoUniversity.Models.Enrollment
+
+<td>
+    @Html.DisplayFor(m => m.Student.FullName)
+    @Html.HiddenFor(model => model.EnrollmentID)
+</td>
+<td>
+    @Html.EnumDropDownListFor(model => model.Grade, htmlAttributes: new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.Grade, "", new { @class = "text-danger" })
+</td>

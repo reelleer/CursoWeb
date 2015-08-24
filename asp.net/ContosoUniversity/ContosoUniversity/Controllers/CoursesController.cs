@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using ContosoUniversity.DAL;
 using ContosoUniversity.Models;
 using System.Data.Entity.Infrastructure;
+using ContosoUniversity.ViewModels;
+using Newtonsoft.Json;
 
 namespace ContosoUniversity.Controllers
 {
@@ -159,6 +161,28 @@ namespace ContosoUniversity.Controllers
         {
             return View();
         }
+
+        //GET
+        public ActionResult RegisterGrades(int id)
+        {
+            Course course = db.Courses.Where(c => c.CourseID == id)
+                .Include(c => c.Enrollments)
+                .Include("Enrollments.Student")
+                .SingleOrDefault();
+
+            if (course == null)
+                return HttpNotFound();
+
+            return View(course);
+        }
+
+        [HttpPost]
+        public JsonResult RegisterGrades(RegisterGrades grades)
+        {
+            var data = new { msg = "ok", data = grades };
+            return Json(data);
+        }
+
 
         //POST Courses/UpdateCourseCredits
         [HttpPost] 
