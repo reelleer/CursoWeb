@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Edit";
-    Html.Html5DateRenderingMode = Html5DateRenderingMode.Rfc3339;
 }
 
 <h2>Edit</h2>
@@ -37,17 +36,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HireDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*para poder seleccionar el input desde jquery se marca el elemento con la clase datepicker*@
-                @Html.EditorFor(model => model.HireDate, new { htmlAttributes = new { @class = "form-control calendar" } })
+                @Html.EditorFor(model => model.HireDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.HireDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OfficeAssignment.Location, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.OfficeAssignment.Location, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OfficeAssignment.Location)
             </div>
         </div>
 
@@ -55,29 +45,34 @@
             <div class="col-md-offset-2 col-md-10">
                 <table>
                     <tr>
-                    @{
-                    int cnt = 0;
-                    List<ContosoUniversity.ViewModels.AssignedCourseData> courses = ViewBag.Courses;
+                        @{
+    int cnt = 0;
+    List<ContosoUniversity.ViewModels.AssignedCourseData> courses = ViewBag.Courses;
 
-                        foreach (var course in courses)
-                        {
-                            if (cnt++ % 3 == 0)
-                            {
-                    @:</tr><tr>
-                            }
-                        @:<td>
-                            <input type="checkbox"
-                                    name="selectedCourses"
-                                    value="@course.CourseID"
-                                    @(Html.Raw(course.Assigned ? "checked=\"checked\"" : "")) />
-                            @course.CourseID @:  @course.Title
-                        @:</td>
+    foreach (var course in courses)
+    {
+        if (cnt++ % 3 == 0)
+        {
+            @:
+        </tr>
+        <tr>
                         }
-                    @:</tr>
+                        @:
+                        <td>
+                            <input type="checkbox"
+                                   name="selectedCourses"
+                                   value="@course.CourseID"
+                                   @(Html.Raw(course.Assigned ? "checked=\"checked\"" : "")) />
+                            @course.CourseID @:  @course.Title
+                            @:
+                        </td>
                     }
-                 </table>
+                    @:
+                </tr>
+                        }
+                    </table>
+                </div>
             </div>
-        </div>
 
 
 
@@ -95,6 +90,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    @*seagrega el llamado los script adicionales para los formularios*@
-    @Scripts.Render("~/bundles/form")
 }
